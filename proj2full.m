@@ -1,4 +1,5 @@
 % Project 2: Simulating End Mill Forces %
+% Full Immersion %
 % By: Keshav Iyengar %
 
 % m file to simulate helical end milling forces %
@@ -12,23 +13,25 @@ calib_factor = 200; % force calibration factor [N/V]
 
 % options %
 phi_st = 0;
-phi_ex = pi/3; % quarter immersion entry and exit angles [rad]
+%phi_ex = pi/3; % quarter immersion entry and exit angles [rad]
 %phi_ex = pi/2; % half immersion entry and exit angles [rad]
 %phi_ex = 2*pi/3; % three quarter immersion entry and exit angles [rad]
+phi_ex = pi; % full immersion entry and exit angles [rad]
 
 % Load Data file %
-title_text = 'Quarter Immersion - Down-milling';
-load DM_4mm_1_4C.dat; tmp=DM_4mm_1_4C; clear DM_4mm_1_4C
+% title_text = 'Quarter Immersion - Down-milling';
+% load DM_4mm_1_4C.dat; tmp=DM_4mm_1_4C; clear DM_4mm_1_4C
 % load New_Quarter01.txt; tmp=New_Quarter01.txt; clear New_Quarter01.txt
-% OTHER DATA FILES
+% OTHER DATA FILES 
 % title_text = 'Half Immersion - Down-milling';
-% load DM_4mm_2_4C.dat;
+% load DM_4mm_2_4C.dat; tmp=DM_4mm_2_4C; clear DM_4mm_2_4C
 
-% title_text = '3/4 Immersion - Down-milling';
-% load DM_4mm_3_4C.dat; 
+%title_text = '3/4 Immersion - Down-milling';
+%load DM_4mm_3_4C.dat; tmp=DM_4mm_3_4C; clear DM_4mm_3_4C
 
-% title_text = 'Full Immersion ';
-% load DM_4mm_4_4C.dat; 
+title_text = 'Full Immersion ';
+load DM_4mm_4_4C.dat; tmp=DM_4mm_4_4C; clear DM_4mm_4_4C
+
 
 % measured forces %
 t_meas = tmp(:,1);
@@ -140,7 +143,3 @@ subplot(2,1,1); plot(t,F,'k',t_meas,F_meas,'k--'); title('Resultant Force and To
 tmp = axis; axis([0 max(t) tmp(3) tmp(4)]);
 subplot(2,1,2); plot(t,T,'k'); title('Resultant Force and Torque'); ylabel('T [Nm]'); xlabel('Time [s]');
 tmp = axis; axis([0 max(t) tmp(3) tmp(4)]);
-
-
-
-

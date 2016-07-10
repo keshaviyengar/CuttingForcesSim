@@ -1,4 +1,5 @@
 % Project 2: Simulating End Mill Forces %
+% Quarter Immersion %
 % By: Keshav Iyengar %
 
 % m file to simulate helical end milling forces %
@@ -15,6 +16,7 @@ phi_st = 0;
 phi_ex = pi/3; % quarter immersion entry and exit angles [rad]
 %phi_ex = pi/2; % half immersion entry and exit angles [rad]
 %phi_ex = 2*pi/3; % three quarter immersion entry and exit angles [rad]
+%phi_ex = pi; % full immersion entry and exit angles [rad]
 
 % Load Data file %
 title_text = 'Quarter Immersion - Down-milling';
